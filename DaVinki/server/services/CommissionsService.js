@@ -2,12 +2,15 @@ import { BadRequest } from "@bcwdev/auth0provider/lib/Errors"
 import { dbContext } from "../db/DbContext"
 
 class CommissionsService {
-    async getByAccount(accountId) {
-        const commissions = await dbContext.Commissions.find({ accountId: accountId }).populate('account', 'name')
+    async getByAccount(artistId, buyerId) {
+        const commissions = await dbContext.Commissions.find({ id: artistId, accountId: buyerId }).populate('account', 'name')
+        //Would the other Line go here
+        return commissions
     }
 
-    async getById() {
-
+    async getById(id) {
+        const commissions = await dbContext.Commissions.find({ _id: id }).populate('account', 'name picture')
+        return commissions
     }
 
     async createCommission(newCommission) {
