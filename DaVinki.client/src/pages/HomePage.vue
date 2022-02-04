@@ -5,22 +5,34 @@
       <SecondaryNavbar />
     </header>
   </div>
-  <div class="row background-row">
+  <div v-else class="row background-row">
     <div>
       <h1 class="display-1">DaVinki</h1>
     </div>
     <div>
       <h2>Simplicity is the ultimate sophistication</h2>
       <br />
-      <h3>-"Leonardo da Vinci"</h3>
+      <h3 data-bs-toggle="modal" data-bs-target="#piece-details">
+        -"Leonardo da Vinci"
+      </h3>
     </div>
   </div>
+  <Modal id="piece-details">
+    <template #modal-title> Piece Title </template>
+    <template #modal-body>
+      <PieceDetails />
+    </template>
+  </Modal>
 </template>
 
 <script>
+import { computed } from '@vue/reactivity';
+import { AppState } from '../AppState';
 export default {
   setup() {
-    return {};
+    return {
+      account: computed(() => AppState.account)
+    };
   }
 }
 </script> 

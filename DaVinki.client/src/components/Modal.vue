@@ -1,9 +1,20 @@
 <template>
-  <div class="modal fade">
-    <div class="modal-dialog">
+  <div class="modal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
       <div class="modal-content bg-dark">
+        <div class="modal-header">
+          <h5 class="modal-title">
+            <slot name="modal-title"></slot>
+          </h5>
+          <button
+            type="button"
+            class="btn-close btn-close-white"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
         <div class="modal-body">
-          <slot class="modal-body"></slot>
+          <slot name="modal-body" />
         </div>
       </div>
     </div>
