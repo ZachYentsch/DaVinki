@@ -30,7 +30,7 @@
 
 <script>
 export default {
-  // Need to pass some props
+  // Need to pass some props for piece
 }
 </script>
 

@@ -20,7 +20,7 @@
   <Modal id="piece-details">
     <template #modal-title> Piece Title </template>
     <template #modal-body>
-      <PieceDetails />
+      <CreateCommissionForm />
     </template>
   </Modal>
 </template>
