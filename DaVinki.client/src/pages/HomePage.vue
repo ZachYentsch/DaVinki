@@ -1,36 +1,36 @@
 <template>
-  <div class="home flex-grow-1 d-flex flex-column align-items-center justify-content-center">
-    <div class="home-card p-5 bg-white rounded elevation-3">
-      <img src="https://bcw.blob.core.windows.net/public/img/8600856373152463" alt="CodeWorks Logo" class="rounded-circle">
-      <h1 class="my-5 bg-dark text-white p-3 rounded text-center">
-        Vue 3 Starter
-      </h1>
+  <div class="row" v-if="account.id">
+    <header>
+      <Navbar />
+      <SecondaryNavbar />
+    </header>
+  </div>
+  <div class="row background-row">
+    <div>
+      <h1 class="display-1">DaVinki</h1>
+    </div>
+    <div>
+      <h2>Simplicity is the ultimate sophistication</h2>
+      <br />
+      <h3>-"Leonardo da Vinci"</h3>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Home'
-}
-</script>
-
-<style scoped lang="scss">
-.home{
-  display: grid;
-  height: 80vh;
-  place-content: center;
-  text-align: center;
-  user-select: none;
-  .home-card{
-    width: 50vw;
-    > img{
-      height: 200px;
-      max-width: 200px;
-      width: 100%;
-      object-fit: contain;
-      object-position: center;
-    }
+  setup() {
+    return {};
   }
 }
+</script> 
+
+<style>
+.background-row {
+  min-height: 100vh;
+  background-image: url("https://images.unsplash.com/photo-1501472312651-726afe119ff1?crop=entropy&cs=srgb&fm=jpg&ixid=Mnw3MjAxN3wwfDF8c2VhcmNofDI5fHxhcnR8ZW58MHx8fHwxNjQzOTI5NTg1&ixlib=rb-1.2.1&q=85&q=85&fmt=jpg&crop=entropy&cs=tinysrgb&w=450");
+  background-position: 75%;
+  background-size: cover;
+}
+/* We will math random these background images from the database */
 </style>
